@@ -1,0 +1,137 @@
+
+/* splash page design */
+
+body.splash{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body.splash *{
+    box-sizing: border-box;
+}
+
+:root{
+    --pz-blue: #0b2c6b;
+    --pz-orange: #f25c05;
+    --pz-gray: #d7d7d7;
+}
+
+/* Fade in Animation Section */
+body.splash .container{
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 24px 20px 150px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------- */
+
+body.splash .logo{
+    width: min(620px, 78vw);
+    max-height: 230px;
+    object-fit: contain;
+}
+
+body.splash h1{
+    font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--pz-blue);
+}
+
+body.splash h1 span{
+    color: var(--pz-orange);
+}
+
+body.splash .progress-bar{
+    width: min(560px, 72vw);
+    height: 6px;
+    background-color: var(--pz-gray);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+body.splash .progress{
+    width: 0%;
+    height: 100%;
+    background-color: var(--pz-orange);
+    border-radius: 999px;
+    transition: width 600ms ease;
+}
+
+@keyframes progressLoad{
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+body.splash .progress.loading{
+    animation: progressLoad 3s ease forwards;
+}
+
+body.splash #status{
+    color: var(--pz-blue);
+    font-size: 0.95rem;
+    margin-top: 14px;
+}
+
+body.splash .status-text{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+body.splash .bottom-waves{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 320px;
+    z-index: 1;
+}
+
+body.splash .right-decor{
+    position: absolute;
+    right: -80px;
+    top: 80px;
+    width: min(520px, 55vw);
+    height: min(720px, 85vh);
+    z-index: 0;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+body.splash .left-decor{
+    position: absolute;
+    left: -80px;
+    top: 110px;
+    width: min(520px, 55vw);
+    height: min(720px, 85vh);
+    z-index: 0;
+    opacity: 0.22;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+
+/* ---------------------------- */

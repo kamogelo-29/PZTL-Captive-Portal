@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/success.css">
+    <title>Connected</title>
+</head>
+<body>
+    
+    <div class="success-container">
+        <h1>Connected Successfully</h1>
+        
+        <img src="assets/logo/IMG-20260421-WA0004.jpg" alt="PZTL Company Logo" class="logo">
+
+        <p id="welcomUser"></p>
+
+        <!-- <div class="card">
+            <h3>Your Activity</h3>
+            <p id="loginCount"></p>
+            <p id="rewardStatus"></p>
+        </div> -->
+
+        <button onclick="browsing()" class="btn"> Start browsing</button>
+    </div>
+    
+
+    <script src="Javascricpt/app.js"></script>
+    <script>
+        requireState("ad2Done", "login.html");
+        if(!checkSession){
+            window.location.href = "login.html"
+        }
+
+        // get user name
+        let user = localStorage.getItem("currentUser");
+        document.getElementById("welcomeUser").innerText = "welcome, " + user;
+
+        
+        function browsing(){
+            window.location.href = "https://google.com"
+        }
+    </script>
+</body>
+</html>

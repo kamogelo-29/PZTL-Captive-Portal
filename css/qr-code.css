@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+#qrcode{
+    margin-top: 20px;
+}

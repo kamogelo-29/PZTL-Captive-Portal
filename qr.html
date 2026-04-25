@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/qr-code.css">
+    <title>WiFi Qr-code</title>
+</head>
+<body>
+    <h1>Scan to connect to PZTL WiFi</h1>
+
+    <div id="qrcode"></div>
+
+    <script src="Javascricpt/qrcode.min.js"></script>
+    <script>
+        let url = "IPaddress"
+
+        new QRCode(document.getElementById("qrcode"),{ text: url, width: 200, height: 200});
+    </script>
+</body>
+</html>

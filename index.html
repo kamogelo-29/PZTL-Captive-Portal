@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/splash.css">
+    <title>PZTL WiFi</title>
+</head>
+<body class="splash">
+    <!-- Right-side background decoration -->
+    <svg class="right-decor" viewBox="0 0 520 720" aria-hidden="true" focusable="false">
+        <g fill="#f5c7b2">
+            <rect x="365" y="40" width="64" height="640" rx="32" opacity="0.55"></rect>
+            <rect x="265" y="140" width="64" height="560" rx="32" opacity="0.38"></rect>
+            <rect x="165" y="260" width="64" height="460" rx="32" opacity="0.28"></rect>
+            <rect x="65" y="340" width="64" height="380" rx="32" opacity="0.22"></rect>
+        </g>
+        <g fill="#ffffff" opacity="0.85">
+            <circle cx="397" cy="420" r="70"></circle>
+            <circle cx="297" cy="560" r="32"></circle>
+            <circle cx="197" cy="460" r="26"></circle>
+            <circle cx="97" cy="640" r="22"></circle>
+        </g>
+        <g fill="none" stroke="#f5c7b2" stroke-width="10" opacity="0.6">
+            <circle cx="397" cy="420" r="70"></circle>
+            <circle cx="297" cy="560" r="32"></circle>
+            <circle cx="197" cy="460" r="26"></circle>
+            <circle cx="97" cy="640" r="22"></circle>
+        </g>
+    </svg>
+
+    <div class="container">
+        <!-- logo -->
+         <img src="assets/logo/IMG-20260421-WA0004.jpg" alt="PZTL company logo" class="logo">
+
+        <!-- Title -->
+        <h1>WELCOME TO <span>PZTL</span> WI-FI</h1>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- Status -->
+        <p id="status" class="status-text">CONNECTING...</p>
+    </div>
+
+    <svg class="bottom-waves" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <!-- Orange wave -->
+        <path fill="#f25c05" d="M0,250C240,210,480,205,720,235C900,258,1020,290,1140,285C1290,278,1375,260,1440,250L1440,320L0,320Z"></path>
+        <!-- White separator -->
+        <path d="M0,268C260,228,500,222,740,250C920,272,1035,300,1150,296C1300,290,1380,272,1440,262" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"></path>
+        <!-- Blue base -->
+        <path fill="#0b2c6b" d="M0,306C240,300,480,292,720,292C980,292,1180,300,1440,240L1440,320L0,320Z"></path>
+    </svg>
+
+    <script src="Javascricpt/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let progress = document.querySelector(".progress");
+            // Trigger the progress animation after first paint
+            requestAnimationFrame(() => progress.classList.add("loading"));
+
+            setTimeout(() => {
+                window.location.href = "ad1.html";
+            }, 4000);
+        });
+    </script>
+    
+</body>
+</html>

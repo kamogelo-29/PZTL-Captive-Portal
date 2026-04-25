@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ads.css">
+    <title>Advertisment</title>
+</head>
+<body>
+   
+    
+    <div class="ad-container">
+        <h1>Sponsored Content</h1>
+        <p class="sponsored">Sponsored by OK Foods</p>
+
+        <video controls autoplay width="500" height="350" muted>
+            <source src="assets/Facebook 944511771808280(360p).MP4" type="video/mp4">
+        </video>
+
+        <h2>Fresh Deals at OK Foods</h2>
+
+        <p>Get the best prices on groceries, snack, and daily essential near you</p>
+
+        <p class="countdown">Ad ends in <span id="count">5</span> seconds...</p>
+        <button id="continueBtn" disabled> Continue </button>
+
+        <p class="small-note">Ads help keep this WiFi service free for you</p>
+
+    </div>
+
+    <script src="Javascricpt/app.js"></script>
+    <script>
+        let timeleft = 5;
+        let btn = document.getElementById("continueBtn");
+
+        let timer = setInterval(
+            () => { 
+                timeleft--; 
+                document.getElementById("count").innerText = timeleft;
+
+                if (timeleft <= 0){
+                    clearInterval(timer);
+                    btn.disabled = false;
+                }
+        }, 1000);
+
+        btn.addEventListener("click", function(){
+            setState("ad1Done");
+            window.location.href ="login.html";
+        })
+    </script>
+</body>
+</html>

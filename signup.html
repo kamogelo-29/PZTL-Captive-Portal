@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Create An Account</h1>
+
+        <img src="assets/logo/IMG-20260421-WA0004.jpg" alt="PZTL Company Logo" class="logo">
+
+        <form action="" id="signupForm">
+            <input type="text" name="" id="username" placeholder="username" required>
+            <br>
+            <br>
+        
+            <input type="password" name="" id="password" placeholder="Password" required>
+            <br>
+            <br>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p class="switch">Already have an account <a href="login.html">Login</a></p>
+    
+    </div>
+
+    <script src="Javascricpt/app.js"></script>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            let user = {username, password};
+
+            localStorage.setItem("user", JSON.stringify(user));
+
+            alert("Signup successful");
+            window.location.href = "login.html"
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Login to PZTL WiFi</h1>
+
+        <img src="assets/logo/IMG-20260421-WA0004.jpg" alt="PZTL Company Logo" class="logo">
+
+        <form action="" id="loginForm">
+            <input type="text" placeholder="Username" name="username" id="" required>
+            <br>
+            <br>
+            <input type="password" placeholder="password" name="userpassword" id="">
+            <br>
+            <br>
+            <button type="submit" class="btn">Login</button>
+
+            <p class="switch">No account? <a href="signup.html">Create one</a></p>
+        </form>
+        <!-- I wanted to create a sign up button that is aligned with the login button -->
+        
+    </div>
+
+    <script src="Javascricpt/app.js"></script>
+
+    <script>
+        requireState("ad1Done", "ad1.html");
+
+        document.getElementById("loginForm").addEventListener("submit", function(e){ 
+            e.preventDefault();
+
+            let username = document.querySelector("input[type='text']").value;
+            let password = document.querySelector("input[type='password']").value;
+            let storedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (storedUser && username === storedUser.username && password === storedUser.password) {
+                setState("loggedIn");
+                localStorage.setItem("currentUser", username);
+                let session = {loggedIn: true, time: Date.now()};
+                localStorage.setItem("session",JSON.stringify(session));
+                window.location.href = "ad2.html";
+            }else{
+                alert("Invalid credentials");
+            }   
+        });
+
+        
+       
+    </script>
+</body>
+</html>

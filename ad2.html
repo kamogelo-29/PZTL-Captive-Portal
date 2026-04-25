@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ads.css">
+    <title>Advertisement</title>
+</head>
+<body>
+
+    <div class="ad-container">
+        <h1>Sponsored Content</h1>
+        <p class="sponsored">Sponsored by OK Foods</p>
+
+        <video controls autoplay width="500" height="350" muted>
+            <source src="assets/Facebook 2467991083717158(480P_SD).mp4" type="video/mp4">
+        </video>
+
+        <h2>Get Exclusive Offers with OK Foods</h2>
+        <p>Get discounts when you connect through PZTL</p>
+        
+         <p class="small-note">Ads help keep this WiFi service free for you</p>
+
+    </div>
+
+    <script src="Javascricpt/app.js"></script>
+    <script>
+        requireState("loggedIn", "login.html");
+
+        setTimeout(
+            () => {
+                setState("ad2Done");
+                window.location.href = "success.html";
+            }, 
+            50000
+        );
+    </script>
+</body>
+</html>
