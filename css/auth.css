@@ -6,15 +6,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100svh;
+    height: auto;
+    padding: clamp(14px, 4vw, 24px);
+    padding-bottom: calc(clamp(14px, 4vw, 24px) + env(safe-area-inset-bottom));
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .auth-container{
     background-color: white;
-    padding: 25px;
+    padding: clamp(18px, 4.2vw, 26px);
     border-radius: 25px;
-    width: 90%;
-    max-width: 350px;
+    width: min(92vw, 380px);
     text-align: center;
     box-shadow: 0 5px 20px rgba(248, 97, 10, 0.984);
 }
@@ -23,21 +27,22 @@ body{
     /* width: min(620px, 78vw);
     max-height: 230px;
     object-fit: contain; */
-    width: 25vw;
+    width: min(160px, 55vw);
     height: auto;
     margin-bottom: 10px;
     object-fit: contain;
-    margin-right: 15px;
+    margin-right: 0;
 
 }
 
 h1{
     color: #0b2c6b;
     margin-top: 10px;
+    font-size: clamp(1.25rem, 3.6vw, 1.65rem);
 }
 
 input{
-    width: 68%;
+    width: 100%;
     padding: 10px;
     margin: 6px 0;
     border-radius: 8px;
@@ -45,14 +50,15 @@ input{
 }
 
 .btn{
-    width: 50%;
-    padding: 15px;
+    width: 100%;
+    padding: 12px 14px;
     background-color: #f25c05;
     color: white;
     border: none;
     border-radius: 8px;
     margin-top: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .switch{

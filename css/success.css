@@ -6,25 +6,30 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100svh;
+    height: auto;
+    padding: clamp(14px, 4vw, 24px);
+    padding-bottom: calc(clamp(14px, 4vw, 24px) + env(safe-area-inset-bottom));
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .success-container{
     text-align: center;
-    width: 90%;
-    max-width: 350px;
+    width: min(92vw, 420px);
 }
 
 .logo{
-    width: 25vw;
+    width: min(160px, 55vw);
     height: auto;
     margin-bottom: 10px;
     object-fit: contain;
-    margin-right: 15px;
+    margin-right: 0;
 }
 
 h1{
     color: #0b2c6b;
+    font-size: clamp(1.25rem, 3.8vw, 1.75rem);
 }
 
 /* .card{
@@ -36,8 +41,9 @@ h1{
 } */
 
 .btn{
-    width: 70%;
-    padding: 10px;
+    width: 100%;
+    max-width: 340px;
+    padding: 12px 14px;
     background-color: #f25c05;
     color: white;
     border: none;
